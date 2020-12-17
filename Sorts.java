@@ -1,8 +1,4 @@
 public class Sorts{
-  /**Bubble sort of an int array.
-  *Upon completion, the elements of the array will be in increasing order.
-  *@param data  the elements to be sorted.
-  */
   public static void bubbleSort(int[] data){
       for(int i = data.length-1; i >= 0; i--){
         for(int j = 0; j < i; j++){
@@ -14,5 +10,15 @@ public class Sorts{
         }
       }
     }
+
+  public static void selectionSort(int[] data){
+    for(int i = 0; i < data.length; i++){
+      int small = 0;
+      for(int j = 0; j < data.length-1; j++){
+        if(data[j] < data[j+1]) small = data[j];
+      }
+      data[i] = small;
+    }
+  }
 
 }
