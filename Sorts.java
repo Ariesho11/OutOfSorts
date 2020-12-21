@@ -16,10 +16,10 @@ public class Sorts{
       int small = data[i];
       int temp = small;
       int ti = i;
-      for(int j = i; j < data.length-1; j++){
-        if(small > data[j+1]){
-          small = data[j+1];
-          ti = j+1;
+      for(int j = i+1; j < data.length; j++){
+        if(small > data[j]){
+          small = data[j];
+          ti = j;
         }
       }
       if(temp != small){
@@ -30,7 +30,15 @@ public class Sorts{
   }
 
   public static void insertionSort(int[] data){
-
+    for(int i = 1; i < data.length; i++){
+      int temp = data[i];
+      int j = i - 1;
+      while ((j >= 0) && (temp < data[j])){
+        data[j+1] = data[j];
+        j = j - 1;
+      }
+      data[j + 1] = temp;
+    }
   }
 
 }
