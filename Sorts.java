@@ -15,18 +15,22 @@ public class Sorts{
     for(int i = 0; i < data.length; i++){
       int small = data[i];
       int temp = small;
+      int ti = i;
       for(int j = i; j < data.length-1; j++){
         if(small > data[j+1]){
           small = data[j+1];
-          data[j+1] = temp;
+          ti = j+1;
         }
       }
-      data[i] = small;
+      if(temp != small){
+        data[ti] = temp;
+        data[i] = small;
+    }
     }
   }
 
   public static void insertionSort(int[] data){
-    
+
   }
 
 }
