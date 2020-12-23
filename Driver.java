@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.Random;
 public class Driver{
   public static void main(String[]args){
     if(args.length < 2){
@@ -12,13 +13,28 @@ public class Driver{
 
       //overhead: 1 random array generation.
       if(args.length < 3 || args[2].equals("random")){
-	      System.out.println("REPLACE THIS LINE WITH ARRAY VALUE GENERATION!");
+        Random rand = new Random();
+	      for(int i = 0; i < Integer.parseInt(args[0]); i++){
+          randData[i] = rand.nextInt();
+        }
+        //System.out.println(Arrays.toString(randData));
       }else if(args[2].equals("equal")){
-	      System.out.println("REPLACE THIS LINE WITH ARRAY VALUE GENERATION!");
+        for(int i = 0; i < Integer.parseInt(args[0]); i++){
+          randData[i] = 1;
+        }
+        //System.out.println(Arrays.toString(randData));
       }else if(args[2].equals("sorted")){
-	      System.out.println("REPLACE THIS LINE WITH ARRAY VALUE GENERATION!");
+        Random rand = new Random();
+	      for(int i = 0; i < Integer.parseInt(args[0]); i++){
+          randData[i] = rand.nextInt();
+        }
+        Arrays.sort(randData);
+        //System.out.println(Arrays.toString(randData));
       }else if(args[2].equals("reversed")){
-	      System.out.println("REPLACE THIS LINE WITH ARRAY VALUE GENERATION!");
+        for(int i = 0; i < Integer.parseInt(args[0]); i++){
+          randData[i] = randData.length-i;
+        }
+        //System.out.println(Arrays.toString(randData));
       }
 
       if(args[1].equals("bubble")){

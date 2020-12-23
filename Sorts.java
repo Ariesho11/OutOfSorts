@@ -13,19 +13,15 @@ public class Sorts{
 
   public static void selectionSort(int[] data){
     for(int i = 0; i < data.length; i++){
-      int small = data[i];
-      int temp = small;
       int ti = i;
       for(int j = i+1; j < data.length; j++){
-        if(small > data[j]){
-          small = data[j];
+        if(data[ti] > data[j]){
           ti = j;
         }
       }
-      if(temp != small){
-        data[ti] = temp;
-        data[i] = small;
-    }
+      int temp = data[ti];
+      data[ti] = data[i];
+      data[i] = temp;
     }
   }
 
